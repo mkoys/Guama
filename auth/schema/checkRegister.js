@@ -1,3 +1,5 @@
+const settings = require("../../settings.js");
+
 const isObject = require("../../utils/isObject.js");
 
 module.exports = function (data) {
@@ -19,6 +21,16 @@ module.exports = function (data) {
     if (typeof data.username !== "string" || typeof data.email !== "string" || typeof data.password !== "string") {
         result.code = 400;
         return result;
+    }
+
+    if(data.username.length <= settings.usernameLength) {
+        result.code = 400;
+        result.messages.push("Username is too short")
+    }
+
+    if(data.password.length <= settings.passwordLength) {
+        result.code = 400;
+        result.messages.push("Password is too short")
     }
 
     return result;
