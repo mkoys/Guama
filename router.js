@@ -1,14 +1,8 @@
 // Import in Express
 const express = require("express");
 
-// Import settings
-const settings = require("./settings.js");
-
-// Create consistent path to API folder
-const apiPath = "." + settings.apiPath;
-
 // Import Auth routers
-const register = require(apiPath + "/auth/register");
+const register = require("./auth/api/register");
 
 // Create Express Router
 const router = express.Router();

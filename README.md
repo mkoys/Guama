@@ -21,7 +21,7 @@
 	* [x] Add route map
 	* [x] Create router structure
 - [ ] **Register API**
-  * [ ] Get user input
+  * [x] Get user input
   * [ ] Verify user input
   * [ ] Controll input by rules
   * [ ] Add user to database

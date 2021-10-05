@@ -1,3 +1,4 @@
 module.exports = {
-    port: 8000 // Port that application will be served on
+    port: 8000, // Port that application will be served on
+    apiPath: "/api"
 }
