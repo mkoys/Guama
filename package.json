@@ -1,0 +1,27 @@
+{
+  "name": "guama-server",
+  "version": "0.0.1",
+  "description": "Back-end for Guama platform",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "guama",
+    "server",
+    "back-end"
+  ],
+  "author": "mkoys",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
