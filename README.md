@@ -22,7 +22,7 @@
 	* [x] Create router structure
 - [ ] **Register API**
   * [x] Get user input
-  * [ ] Verify user input
+  * [x] Verify user input
   * [ ] Controll input by rules
   * [ ] Add user to database
   * [ ] Respond
