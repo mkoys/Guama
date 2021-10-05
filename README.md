@@ -17,4 +17,7 @@
 - [x] **Create and push to GitHub repo**
 	* [x] Create repo
 	* [x] Push boilerplate code
+- [x] **Create router for API**
+	* [x] Add route map
+	* [x] Create router structure
 	

@@ -15,6 +15,9 @@ const helmet = require("helmet");
 const cors = require("cors");
 const morgan = require("morgan");
 
+// Import in router
+const router = require("./router.js");
+
 // Create Express, HTTP and Socket server instances
 const app = express();
 const server = http.createServer(app);
@@ -25,6 +28,9 @@ app.use(express.json()); // JSON parser
 app.use(helmet()); // Set's some headers to be more secure
 app.use(cors()); // Set's Cross Origin Access Headers
 app.use(morgan("tiny")); // Small HTTP logger
+
+// Use router as global Router
+app.use("/", router);
 
 // GET Route hello world
 app.get("/", (req, res) => {
