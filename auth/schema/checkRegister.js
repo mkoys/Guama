@@ -25,12 +25,17 @@ module.exports = function (data) {
 
     if(data.username.length <= settings.usernameLength) {
         result.code = 400;
-        result.messages.push("Username is too short")
+        result.messages.push("Username is too short");
+    }
+
+    if(!data.email.includes("@")) {
+        result.code = 400;
+        result.messages.push("Email must be valid");
     }
 
     if(data.password.length <= settings.passwordLength) {
         result.code = 400;
-        result.messages.push("Password is too short")
+        result.messages.push("Password is too short");
     }
 
     return result;
