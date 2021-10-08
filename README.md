@@ -7,6 +7,7 @@
 - **Morgan** --> Small http logger
 - **Nodemon** --> Development code live realoader
 - **MongoDB** --> No SQL Database
+- **Bcrypt** --> Password hasher
 
 ## Work Log 📔️
 - [x] **Create boilerplate code with base dependecies**
@@ -25,13 +26,17 @@
   * [x] Get user input
   * [x] Verify user input
   * [x] Controll input by rules
-	- [x] Username length
-	- [x] Email validation
-	- [x] Password length
+  	- [x] Username length
+  	- [x] Email validation
+  	- [x] Password length
+  	- [x] Password capitalize
+  	- [x] Password special character
+  * [x] Check if user doen't already exist
+  	- [x] Check duplicate email
   * [ ] Add user to database
-	- [x] Create database connection file
-	- [x] Create setting for database string
-	- [ ] Create user id
-	- [ ] Create user data
-	- [ ] Save to database
-  * [ ] Respond
+  	- [x] Create database connection file
+  	- [x] Create setting for database string
+  	- [x] Create user id
+  	- [x] Create user data
+  	- [x] Save to database
+  * [x] Respond

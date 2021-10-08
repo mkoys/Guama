@@ -11,15 +11,16 @@ const createUser = require("../database/createUser.js");
 const router = express.Router();
 
 // Register Route
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
     // Get data from request body
     const data = req.body;
 
     // Store input check in variable
-    const inputCheckResult = inputSchema(data);
+    const inputCheckResult = await inputSchema(data);
 
     // If we have no error code from check create user with data
-    if(inputCheckResult.code == 200) {
+    if (inputCheckResult.code == 200) {
+        // Creates user
         createUser(data);
     }
 

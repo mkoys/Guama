@@ -4,4 +4,13 @@ module.exports = {
     dbName: "guama", // Database to set in connection
     usernameLength: 4, // Minimum lenght of username
     passwordLength: 8, // Minimum lenght of password
+    passwordCapitalized: false,
+    passwordSpecial: false,
+    passwordSpecialRegex: /[$&+,:;=?@#|'<>.^*()%!-]/g,
+    saltRounds: 10,
+    defaultBio: "",
+    defaultAvatar: "",
+    generateId: () => {
+        return new Date().getTime();
+    }
 }
