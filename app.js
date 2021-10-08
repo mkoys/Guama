@@ -15,8 +15,14 @@ const helmet = require("helmet");
 const cors = require("cors");
 const morgan = require("morgan");
 
+// Import connection call
+const mongodb = require("./connect.js");
+
 // Import in router
 const router = require("./router.js");
+
+// Initialize Database connection
+mongodb.init();
 
 // Create Express, HTTP and Socket server instances
 const app = express();
