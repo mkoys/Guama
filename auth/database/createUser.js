@@ -1,6 +1,7 @@
 // Import functions
 const hashPassword = require("../functions/hashPassword.js");
 
+// Import settings
 const settings = require("../../settings.js");
 
 // Import database connection

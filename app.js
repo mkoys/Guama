@@ -4,11 +4,11 @@ const settings = require("./settings.js");
 // Import Native HTTP node module
 const http = require("http");
 
-// Import Socket
-const { Server } = require("socket.io");
-
 // Import Express
 const express = require("express");
+
+// Import Socket
+const socketIo = require("./socket.js");
 
 // Import Express middleware
 const helmet = require("helmet");
@@ -27,7 +27,7 @@ mongodb.init();
 // Create Express, HTTP and Socket server instances
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+const io = socketIo.init(server);
 
 // Use express middleware 
 app.use(express.json()); // JSON parser

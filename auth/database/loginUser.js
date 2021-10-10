@@ -35,9 +35,7 @@ module.exports = async function createUser(data) {
 
   // Return 1 if hash is equal else return 0
   if(passwordResult) {
-    // Create session
-    session.createSession(data.token, foundUser.id);
-
+    session.createSession(data.token, foundUser.id); // Create session
     return 1;
   }else {
     return 0;
