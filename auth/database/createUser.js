@@ -19,7 +19,6 @@ module.exports = async function createUser(data) {
         passcode: await hashPassword(data.password),
     }
 
-
     // Get database
     const database = mongodb.get();
 

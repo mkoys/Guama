@@ -22,7 +22,7 @@
 - [x] **Create router for API**
 	* [x] Add route map
 	* [x] Create router structure
-- [ ] **Register API**
+- [x] **Register API**
   * [x] Get user input
   * [x] Verify user input
   * [x] Controll input by rules
@@ -33,10 +33,27 @@
   	- [x] Password special character
   * [x] Check if user doen't already exist
   	- [x] Check duplicate email
-  * [ ] Add user to database
+  * [x] Add user to database
   	- [x] Create database connection file
   	- [x] Create setting for database string
   	- [x] Create user id
   	- [x] Create user data
   	- [x] Save to database
   * [x] Respond
+- [x] **Login API**
+  * [x] Get Input
+  * [x] Verify Input
+  * [x] Validate user
+  * [x] Respond
+  * [ ] Create Session
+- [ ] **Session logic**
+	* [ ] Create Session
+		- [ ] Based on TOKEN
+		- [ ] Has TOKEN
+		- [ ] Has user ID
+		- [ ] Has EXPIRE
+		- [ ] Has SOCKET array
+  * [ ] Reverse search by ID
+		- [ ] object key is ID
+		- [ ] value array of TOKENS
+		- [ ] value array of SOCKETS
