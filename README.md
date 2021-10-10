@@ -8,6 +8,7 @@
 - **Nodemon** --> Development code live realoader
 - **MongoDB** --> No SQL Database
 - **Bcrypt** --> Password hasher
+- **NanoID** --> Small ID generator
 
 ## Work Log 📔️
 - [x] **Create boilerplate code with base dependecies**
@@ -44,16 +45,12 @@
   * [x] Get Input
   * [x] Verify Input
   * [x] Validate user
+  * [x] Create token
   * [x] Respond
-  * [ ] Create Session
-- [ ] **Session logic**
-	* [ ] Create Session
-		- [ ] Based on TOKEN
-		- [ ] Has TOKEN
-		- [ ] Has user ID
-		- [ ] Has EXPIRE
-		- [ ] Has SOCKET array
-  * [ ] Reverse search by ID
-		- [ ] object key is ID
-		- [ ] value array of TOKENS
-		- [ ] value array of SOCKETS
+  * [x] Create Session
+- [x] **Session logic**
+	* [x] Create Session
+		- [x] Based on TOKEN
+		- [x] Has TOKEN
+		- [x] Has user ID
+		- [x] Has EXPIRE

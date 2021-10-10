@@ -1,6 +1,9 @@
 // Import NPM module
 const bcrypt = require("bcrypt");
 
+// Import session
+const session = require("../../session.js");
+
 // Import database connection
 const mongodb = require("../../connect.js");
 
@@ -32,6 +35,9 @@ module.exports = async function createUser(data) {
 
   // Return 1 if hash is equal else return 0
   if(passwordResult) {
+    // Create session
+    session.createSession(data.token, foundUser.id);
+
     return 1;
   }else {
     return 0;

@@ -1,5 +1,6 @@
-// Import in Express
+// Import in NPM modules
 const express = require("express");
+const { nanoid } = require("nanoid");
 
 // Import input schema
 const inputSchema = require("../schema/checkLogin.js");
@@ -14,6 +15,9 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   // Get data from request body
   const data = req.body;
+
+  // Set token
+  data.token = nanoid(5);
 
   // Store input check in variable
   const inputCheckResult = await inputSchema(data);
@@ -38,7 +42,10 @@ router.post("/", async (req, res) => {
   if (inputCheckResult.messages.length > 0) {
     res.status(inputCheckResult.code);
     res.json({ error: inputCheckResult.messages });
-  } else {
+  } else if(inputCheckResult.code == 200) {
+    res.status(inputCheckResult.code);
+    res.json({token: data.token});
+  }else {
     res.sendStatus(inputCheckResult.code);
   }
 });
