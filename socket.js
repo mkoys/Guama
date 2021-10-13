@@ -1,18 +1,18 @@
 // Import Socket
 const { Server } = require("socket.io");
 
-// Dtabase variable
+// Socket variable
 let io = null;
 
 module.exports = {
-    // Inits server connection to database
+    // Inits server 
     init: async (server) => {
-        // Async connection using client
+        // New server
         io = new Server(server);
-        // Return database object
+        // Return socket object
         return io;
     },
-    // Return database object
+    // Return socket object
     get: () => {
         return io;
     }

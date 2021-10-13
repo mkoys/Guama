@@ -13,14 +13,14 @@
 ## Work Log 📔️
 - [x] **Create boilerplate code with base dependecies**
 	* [x] Import in modules
-	* [x] Create Instances   } of Http, Express, Socket
+	* [x] Create Instances of Http, Express, Socket
 	* [x] Use express middlewares
 	* [x] Create hello world route
 	* [x] Comment code
-- [x] **Create and push to GitHub repo**
+- [x] **GitHub repo**
 	* [x] Create repo
 	* [x] Push boilerplate code
-- [x] **Create router for API**
+- [x] **Router for API** 
 	* [x] Add route map
 	* [x] Create router structure
 - [x] **Register API**
@@ -48,9 +48,18 @@
   * [x] Create token
   * [x] Respond
   * [x] Create Session
-- [x] **Session logic**
+- [ ] **Session logic**
 	* [x] Create Session
 		- [x] Based on TOKEN
 		- [x] Has TOKEN
 		- [x] Has user ID
 		- [x] Has EXPIRE
+	* [ ] Check session
+    - [ ] Check if user has a session
+    - [ ] Respond  
+- [ ] **Me Api**
+  - [x] Check session
+  - [x] Req parser
+  - [x] Get token (Cookie or Auth)
+  - [ ] Get user details from id
+  - [ ] Return details

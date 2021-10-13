@@ -8,6 +8,9 @@ const inputSchema = require("../schema/checkLogin.js");
 // Import input schema
 const loginUser = require("../database/loginUser.js");
 
+// Import settings
+const settings = require("../../settings.js");
+
 // Create Express Router
 const router = express.Router();
 
@@ -17,7 +20,7 @@ router.post("/", async (req, res) => {
   const data = req.body;
 
   // Set token
-  data.token = nanoid(5);
+  data.token = nanoid(settings.tokenLength);
 
   // Store input check in variable
   const inputCheckResult = await inputSchema(data);
@@ -44,7 +47,10 @@ router.post("/", async (req, res) => {
     res.json({ error: inputCheckResult.messages });
   } else if(inputCheckResult.code == 200) {
     res.status(inputCheckResult.code);
-    res.json({token: data.token});
+    res.cookie("token", data.token, {
+      expires: false,
+    });
+    res.json({token: data.token})
   }else {
     res.sendStatus(inputCheckResult.code);
   }
