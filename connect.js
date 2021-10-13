@@ -12,12 +12,15 @@ let database = null;
 
 module.exports = {
     // Inits server connection to database
-    init: async () => {
+    init: async (callback) => {
         // Async connection using client
         await client.connect();
 
         // Log on connection
         console.log("Connected to database");
+
+        // Return callback
+        callback();
 
         // Get database by name
         const db = client.db(settings.dbName);

@@ -21,8 +21,24 @@ const mongodb = require("./connect.js");
 // Import in router
 const router = require("./router.js");
 
+// Import terminal
+const terminal = require("./terminal.js");
+
 // Initialize Database connection
-mongodb.init();
+mongodb.init(() => {
+    // Checks if we got any flags
+    if (process.argv[2]) {
+        // Split all flags and then pass them to command swtch
+        process.argv[2].split("").forEach(flag => {
+            switch (flag) {
+                // Terminal Flag
+                case "t":
+                    terminal(); // Inits terminal
+                    break;
+            }
+        });
+    }
+});
 
 // Create Express, HTTP and Socket server instances
 const app = express();
@@ -47,4 +63,6 @@ app.get("/", (req, res) => {
 const port = settings.port || 8000;
 
 // Server listen on port and log message
-server.listen(port, () => {console.log(`Running on http://localhost:${port}`)});
+server.listen(port, () => {
+    console.log(`Running on http://localhost:${port}`);
+});
