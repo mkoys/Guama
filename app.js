@@ -25,31 +25,38 @@ const router = require("./router.js");
 const terminal = require("./terminal.js");
 
 // Initialize Database connection
-mongodb.init(() => {
-    // Checks if we got any flags
-    if (process.argv[2]) {
-        // Split all flags and then pass them to command swtch
-        process.argv[2].split("").forEach(flag => {
-            switch (flag) {
-                // Terminal Flag
-                case "t":
-                    terminal(); // Inits terminal
-                    break;
-            }
-        });
-    }
-});
+mongodb.init();
 
 // Create Express, HTTP and Socket server instances
 const app = express();
 const server = http.createServer(app);
 const io = socketIo.init(server);
 
+// Flag checking
+// Checks if we got any flags
+if (process.argv[2]) {
+    // Split all flags and then pass them to command swtch
+    process.argv[2].split("").forEach(flag => {
+        switch (flag) {
+            // Terminal Flag
+            case "t":
+                terminal.motd(); // Shows terminal motd
+                terminal.init(); // Inits terminal
+                break;
+        }
+        switch (flag) {
+            // Debug Flag
+            case "d":
+                app.use(morgan("tiny")); // Small HTTP logger
+                break;
+        }
+    });
+}
+
 // Use express middleware 
 app.use(express.json()); // JSON parser
 app.use(helmet()); // Set's some headers to be more secure
 app.use(cors()); // Set's Cross Origin Access Headers
-app.use(morgan("tiny")); // Small HTTP logger
 
 // Use router as global Router
 app.use("/", router);
