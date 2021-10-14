@@ -24,13 +24,21 @@ const router = require("./router.js");
 // Import terminal
 const terminal = require("./terminal.js");
 
+// Import socket middleware
+const checkSocket = require("./app/middleware/checkSocket.js");
+
+// Import session
+const session = require("./session.js");
+
 // Initialize Database connection
 mongodb.init();
 
 // Create Express, HTTP and Socket server instances
 const app = express();
 const server = http.createServer(app);
-const io = socketIo.init(server);
+// Inits Socket io server and then sets it to variable
+socketIo.init(server);
+const io = socketIo.get();
 
 // Flag checking
 // Checks if we got any flags
@@ -60,6 +68,18 @@ app.use(cors()); // Set's Cross Origin Access Headers
 
 // Use router as global Router
 app.use("/", router);
+
+// Check session middleware 
+io.use(checkSocket);
+
+// On socket connection
+io.on("connection", (socket) => {
+    console.log(`User ${socket.id} has connected with token of ${socket.token}`);
+    socket.on("disconnect", () => {
+        console.log(`User ${socket.id} has disconnected with token of ${socket.token}`);
+        session.removeSocket(socket, socket.token);
+    });
+});
 
 // GET Route hello world
 app.get("/", (req, res) => {

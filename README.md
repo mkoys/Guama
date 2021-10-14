@@ -57,10 +57,27 @@
 		- [x] Has EXPIRE
 	* [x] Check session
     - [x] Check if user has a session
-    - [x] Respond  
+    - [x] Respond
+  * [x] Socket middleware
+  	- [x] Get token from headers or auth
+  	- [x] Check if token exists
+  	- [x] Append socket to token
+  	- [x] Remove socket on disconnect
 - [x] **Me Api**
-  - [x] Check session
-  - [x] Req parser
-  - [x] Get token (Cookie or Auth)
-  - [x] Get user details from id
-  - [x] Return details
+  * [x] Check session
+  * [x] Req parser
+  * [x] Get token (Cookie or Auth)
+  * [x] Get user details from id
+  * [x] Return details
+- [x] Flags
+	* [x] Terminal
+	* [x] Debug
+- [ ] Terminal
+	* [x] Boilerplate
+	* [x] Clear
+	* [x] Exit 
+	* [ ] addUser
+- [ ] Create Installer
+	* [ ] Clone files
+	* [ ] Npm Install
+	* [ ] Process
