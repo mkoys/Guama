@@ -9,6 +9,7 @@
 - **MongoDB** --> No SQL Database
 - **Bcrypt** --> Password hasher
 - **NanoID** --> Small ID generator
+- **Terminal-Kit** --> Terminal input parser
 
 ## Work Log 📔️
 - [x] **Create boilerplate code with base dependecies**
@@ -48,18 +49,18 @@
   * [x] Create token
   * [x] Respond
   * [x] Create Session
-- [ ] **Session logic**
+- [x] **Session logic**
 	* [x] Create Session
 		- [x] Based on TOKEN
 		- [x] Has TOKEN
 		- [x] Has user ID
 		- [x] Has EXPIRE
-	* [ ] Check session
-    - [ ] Check if user has a session
-    - [ ] Respond  
-- [ ] **Me Api**
+	* [x] Check session
+    - [x] Check if user has a session
+    - [x] Respond  
+- [x] **Me Api**
   - [x] Check session
   - [x] Req parser
   - [x] Get token (Cookie or Auth)
-  - [ ] Get user details from id
-  - [ ] Return details
+  - [x] Get user details from id
+  - [x] Return details
