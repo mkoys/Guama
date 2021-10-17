@@ -12,6 +12,7 @@
 - **Terminal-Kit** --> Terminal input parser
 
 ## Work Log 📔️
+### V1 - Thoothpick 🥢
 - [x] **Create boilerplate code with base dependecies**
 	* [x] Import in modules
 	* [x] Create Instances of Http, Express, Socket
@@ -64,20 +65,72 @@
   	- [x] Append socket to token
   	- [x] Remove socket on disconnect
 - [x] **Me Api**
-  * [x] Check session
-  * [x] Req parser
-  * [x] Get token (Cookie or Auth)
-  * [x] Get user details from id
-  * [x] Return details
-- [x] Flags
+	* [x] / - Gets your data 
+    - [x] Check session
+    - [x] Req parser
+    - [x] Get token (Cookie or Auth)
+    - [x] Get user details from id
+    - [x] Get status
+    - [x] Return details
+- [ ] **User API**
+	* [ ] / [GET] - Gets your user list
+  * [ ] :ID [GET] - Gets users info based on id
+		- [ ] Check session
+		- [ ] Get token
+		- [ ] Check if can get details
+		- [ ] Get user details
+		- [ ] If friends return more details
+		- [ ] Parse user details
+		- [ ] Retrun details
+		- [ ] Respond
+  * [ ] ADD/:ID [GET] - Sends friend request
+		- [ ] Check session
+		- [ ] Get token
+		- [ ] Check if not already friends
+		- [ ] Check if not already send
+		- [ ] Check if not already pending
+    - [ ] Add user
+		- [ ] Respond
+		- [ ] Socket
+  * [ ] REMOVE/:ID [GET] - Removes user from friends
+		- [ ] Check if user is friend
+		- [ ] Remove
+		- [ ] Respond
+		- [ ] Socket
+  * [ ] ANSWER/:ID [POST] - Accepts or Declines friend request
+   	- [ ] Get user data
+  	- [ ] Validate user input
+  	- [ ] Check if user has pending
+  	- [ ] Accept/Decline
+  	- [ ] Respond
+  	- [ ] Socket
+  * [ ] FIND [POST] - Finds users based on data
+		- [ ] Get user data
+		- [ ] Validate user input
+		- [ ] Find users
+		- [ ] Respond
+- [ ] **Message API**
+	* [ ] / [GET] - All messages
+	* [ ] :ID [GET] - Messages from user
+	* [ ] SEND/:ID - Send message to user
+- [ ] **Socket**
+  * [x] Middleware
+  * [x] Append to socket
+  * [x] Remove from socket
+  * [ ] Add User
+  * [ ] Status
+  * [ ] Remove User
+  * [ ] Accept/Decline User
+  * [ ] Messages
+- [x] **Flags**
 	* [x] Terminal
 	* [x] Debug
-- [ ] Terminal
+- [ ] **Terminal**
 	* [x] Boilerplate
 	* [x] Clear
 	* [x] Exit 
 	* [ ] addUser
-- [ ] Create Installer
+- [ ] **Linux Installer**
 	* [ ] Clone files
 	* [ ] Npm Install
 	* [ ] Process

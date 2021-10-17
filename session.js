@@ -1,5 +1,5 @@
 let sessionStore = {}; // Store's session by TOKEN as main key
-let IdStore = {}; // Store's tokens and sokects by ID as main key
+let idStore = {}; // Store's tokens and sokects by ID as main key
 
 module.exports = {
   createSession: function (token, id) { // Create's new session
@@ -14,12 +14,19 @@ module.exports = {
     /* If we already have a user main token 
     key than it must have at last one token 
     in id store so push it */
-    if (IdStore[id]) {
-      IdStore[id].token.push(token);
+    if (idStore[id]) {
+      idStore[id].token.push(token);
     } else {
-      IdStore[id] = {
+      idStore[id] = {
         token: [token]
       }
+    }
+  },
+  getUserSession: function (userID) {
+    if(idStore[userID].socket) {
+      return idStore[userID].socket;
+    }else {
+      return [];
     }
   },
   checkSession: function (token) {
@@ -37,11 +44,23 @@ module.exports = {
       sessionStore[token].socket = [];
     }
 
-    sessionStore[token].socket.push(socket);
+    if(!idStore[this.getId(token)].socket) {
+      idStore[this.getId(token)].socket = [];
+    };
+
+    idStore[this.getId(token)].socket.push(socket.id);
+
+    sessionStore[token].socket.push(socket.id);
   },
   removeSocket: function (socket, token) {
     const index = sessionStore[token].socket.indexOf(socket.id);
-    
+
+    if(idStore[this.getId(token)].socket) {
+      const index = idStore[this.getId(token)].socket.indexOf(socket.id);
+
+      idStore[this.getId(token)].socket.splice(index, 1);
+    };
+
     sessionStore[token].socket.splice(index, 1);
   }
 }
