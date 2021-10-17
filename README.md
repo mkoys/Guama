@@ -75,14 +75,14 @@
 - [ ] **User API**
 	* [ ] / [GET] - Gets your user list
   * [ ] :ID [GET] - Gets users info based on id
-		- [ ] Check session
-		- [ ] Get token
-		- [ ] Check if can get details
-		- [ ] Get user details
+		- [x] Check session
+		- [x] Get token
+		- [x] Check if can get details
+		- [x] Get user details
 		- [ ] If friends return more details
-		- [ ] Parse user details
-		- [ ] Retrun details
-		- [ ] Respond
+		- [x] Parse user details
+		- [x] Retrun details
+		- [x] Respond
   * [ ] ADD/:ID [GET] - Sends friend request
 		- [ ] Check session
 		- [ ] Get token

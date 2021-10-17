@@ -23,8 +23,12 @@ module.exports = {
     }
   },
   getUserSession: function (userID) {
-    if(idStore[userID].socket) {
-      return idStore[userID].socket;
+    if (idStore[userID]) {
+      if (idStore[userID].socket) {
+        return idStore[userID].socket;
+      } else {
+        return [];
+      }
     }else {
       return [];
     }
@@ -44,7 +48,7 @@ module.exports = {
       sessionStore[token].socket = [];
     }
 
-    if(!idStore[this.getId(token)].socket) {
+    if (!idStore[this.getId(token)].socket) {
       idStore[this.getId(token)].socket = [];
     };
 
@@ -55,7 +59,7 @@ module.exports = {
   removeSocket: function (socket, token) {
     const index = sessionStore[token].socket.indexOf(socket.id);
 
-    if(idStore[this.getId(token)].socket) {
+    if (idStore[this.getId(token)].socket) {
       const index = idStore[this.getId(token)].socket.indexOf(socket.id);
 
       idStore[this.getId(token)].socket.splice(index, 1);

@@ -1,17 +1,19 @@
-const {checkSession, getId, getUserSession} = require("../../session.js");
+const { checkSession, getId, getUserSession } = require("../../session.js");
 
-module.exports = function(token) {
+module.exports = function (token, id) {
   let userID;
-  
-  if(checkSession(token)) {
-    userID = getId(token);
+
+  if (!id) {
+    if (checkSession(token)) {
+      userID = getId(token);
+    }
   }
 
-  const numberOfSessions = getUserSession(userID).length;
+  const numberOfSessions = getUserSession(token ? userID : id).length;
 
-  if(numberOfSessions > 0) {
+  if (numberOfSessions > 0) {
     return "Online";
-  }else{
+  } else {
     return "Offline";
   }
 }

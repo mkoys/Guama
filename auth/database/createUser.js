@@ -18,6 +18,7 @@ module.exports = async function createUser(data) {
         username: data.username.toLowerCase(),
         displayName: data.username,
         passcode: await hashPassword(data.password),
+        profile: "private"
     }
 
     // Get database
@@ -26,6 +27,6 @@ module.exports = async function createUser(data) {
     // Set database collection to users
     const users = database.collection("users");
 
-    // Inser user to database
+    // Inserts user to database
     users.insertOne(user);
 }

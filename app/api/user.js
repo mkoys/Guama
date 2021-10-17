@@ -13,9 +13,11 @@ const router = express.Router();
 // Check if user has a session
 router.use(checkSession);
 
-// Me Route
-router.get("/", async (req, res) => {
-  const data = await getUserData(req.token);
+// Get user info Route
+router.get("/:id", async (req, res) => {
+  const id = req.params.id;
+
+  const data = await getUserData(null, id, {inherit: true});
 
   res.json(data);
 });

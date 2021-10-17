@@ -7,6 +7,7 @@ const login = require("./auth/api/login.js");
 
 // Import App routers
 const me = require("./app/api/me.js");
+const user = require("./app/api/user.js");
 
 // Create Express Router
 const router = express.Router();
@@ -17,7 +18,8 @@ const router = express.Router();
 routeMap = [
     { path: "/auth/register", router: register },
     { path: "/auth/login", router: login },
-    { path: "/app/me", router: me }
+    { path: "/app/me", router: me },
+    { path: "/app/user", router: user}
 ]
 
 // Loop over each path defined in routeMap and use it
