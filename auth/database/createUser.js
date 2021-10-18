@@ -18,7 +18,13 @@ module.exports = async function createUser(data) {
         username: data.username.toLowerCase(),
         displayName: data.username,
         passcode: await hashPassword(data.password),
-        profile: "private"
+        profile: "private",
+        connect: {
+            friends: [],
+            send: [],
+            pending: [],
+            blocked: []
+        }
     }
 
     // Get database

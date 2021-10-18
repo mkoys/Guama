@@ -14,7 +14,7 @@ const getStatus = require("../functions/getStatus.js");
 module.exports = async function getUserData(token, id, permissions) {
 
   // Items to delte from found user
-  const deleteArray = ["passcode", "_id", "username"];
+  const deleteArray = ["passcode", "_id", "username", "connect"];
 
   // Values to return if private profile
   const notPrivate = ["displayName", "avatar", "id", "profile"];
@@ -46,8 +46,6 @@ module.exports = async function getUserData(token, id, permissions) {
 
         // Private profile data delete
         case "private":
-          // Values to return if private profile
-          const notPrivate = ["displayName", "avatar", "id", "profile"];
           // Loop over each object in found user
           Object.keys(foundUser).forEach(key => {
             // If we find key in non delete Array do not delete them

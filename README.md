@@ -9,7 +9,7 @@
 - **MongoDB** --> No SQL Database
 - **Bcrypt** --> Password hasher
 - **NanoID** --> Small ID generator
-- **Terminal-Kit** --> Terminal input parser
+- **Terminal-Kit** --> Terminal input parser and display
 
 ## Work Log 📔️
 ### V1 - Thoothpick 🥢
@@ -83,27 +83,27 @@
 		- [x] Parse user details
 		- [x] Retrun details
 		- [x] Respond
-  * [ ] ADD/:ID [GET] - Sends friend request
-		- [ ] Check session
-		- [ ] Get token
-		- [ ] Check if not already friends
-		- [ ] Check if not already send
-		- [ ] Check if not already pending
-    - [ ] Add user
-		- [ ] Respond
-		- [ ] Socket
+  * [x] ADD/:ID [GET] - Sends friend request
+		- [x] Check session
+		- [x] Get token
+		- [x] Check if not already friends
+		- [x] Check if not already send
+		- [x] Check if not already pending
+    - [x] Add user
+		- [x] Respond
+		- [x] Socket
   * [ ] REMOVE/:ID [GET] - Removes user from friends
 		- [ ] Check if user is friend
 		- [ ] Remove
 		- [ ] Respond
 		- [ ] Socket
-  * [ ] ANSWER/:ID [POST] - Accepts or Declines friend request
-   	- [ ] Get user data
-  	- [ ] Validate user input
-  	- [ ] Check if user has pending
-  	- [ ] Accept/Decline
-  	- [ ] Respond
-  	- [ ] Socket
+  * [x] ANSWER/:ID [GET] - Accepts or Declines friend request
+   	- [x] Get user data
+  	- [x] Validate user input
+  	- [x] Check if user has pending
+  	- [x] Accept/Decline
+  	- [x] Respond
+  	- [x] Socket
   * [ ] FIND [POST] - Finds users based on data
 		- [ ] Get user data
 		- [ ] Validate user input
