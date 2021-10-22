@@ -73,7 +73,7 @@
     - [x] Get status
     - [x] Return details
 - [ ] **User API**
-	* [ ] / [GET] - Gets your user list
+	* [ ] / [GET] - Gets your user list 
   * [ ] :ID [GET] - Gets users info based on id
 		- [x] Check session
 		- [x] Get token
@@ -92,11 +92,11 @@
     - [x] Add user
 		- [x] Respond
 		- [x] Socket
-  * [ ] REMOVE/:ID [GET] - Removes user from friends
-		- [ ] Check if user is friend
-		- [ ] Remove
-		- [ ] Respond
-		- [ ] Socket
+  * [x] REMOVE/:ID [GET] - Removes user from friends
+		- [x] Check if user is friend
+		- [x] Remove
+		- [x] Respond
+		- [x] Socket
   * [x] ANSWER/:ID [GET] - Accepts or Declines friend request
    	- [x] Get user data
   	- [x] Validate user input
@@ -117,10 +117,10 @@
   * [x] Middleware
   * [x] Append to socket
   * [x] Remove from socket
-  * [ ] Add User
+  * [x] Add User
   * [ ] Status
   * [ ] Remove User
-  * [ ] Accept/Decline User
+  * [x] Accept/Decline User
   * [ ] Messages
 - [x] **Flags**
 	* [x] Terminal
@@ -130,7 +130,3 @@
 	* [x] Clear
 	* [x] Exit 
 	* [ ] addUser
-- [ ] **Linux Installer**
-	* [ ] Clone files
-	* [ ] Npm Install
-	* [ ] Process

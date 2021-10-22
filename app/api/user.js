@@ -8,6 +8,7 @@ const checkSession = require("../middleware/checkSession.js");
 const getUserData = require("../database/getUserData.js");
 const addUser = require("../database/addUser.js");
 const answerUser = require("../database/answerUser.js");
+const removeUser = require("../database/removeUser.js");
 
 // Create Express Router
 const router = express.Router();
@@ -24,6 +25,7 @@ router.get("/:id", async (req, res) => {
   res.json(data);
 });
 
+// Add user by ID
 router.get("/add/:id", async (req, res) => {
   const id = req.params.id;
 
@@ -32,6 +34,16 @@ router.get("/add/:id", async (req, res) => {
   res.json(result);
 });
 
+// Remove user by ID
+router.get("/remove/:id", async (req, res) => {
+  const id = req.params.id;
+
+  const result = await removeUser(id, req.token);
+
+  res.json(result);
+});
+
+// Answer user by ID with answer
 router.post("/answer/:id", async (req, res) => {
   const id = req.params.id;
 
