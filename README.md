@@ -119,7 +119,7 @@
   * [x] Remove from socket
   * [x] Add User
   * [ ] Status
-  * [ ] Remove User
+  * [x] Remove User
   * [x] Accept/Decline User
   * [ ] Messages
 - [x] **Flags**

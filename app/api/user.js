@@ -62,5 +62,19 @@ router.post("/answer/:id", async (req, res) => {
   res.json(result);
 });
 
+// Find user by data;
+router.post("/find", async (req, res) => {
+  const data = req.body;
+
+  if(!data.username) {
+    return res.sendStatus(400);
+  }
+
+  if(typeof data.username != "string") {
+    return res.sendStatus(400);
+  }
+
+});
+
 // Export router
 module.exports = router;

@@ -18,7 +18,7 @@ module.exports = function(req) {
   } else {
     // Check if auth header is set else error
     if (!req.headers.authorization) {
-      return res.sendStatus(400);
+      return {error: true};
     } else {
       // Get token from auth header
       token = req.headers.authorization.split(" ")[1];

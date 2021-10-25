@@ -12,14 +12,18 @@ module.exports = (req, res, next) => {
   // Checks if user has session
   const hasSession = session.checkSession(parsedReq.token);
 
+  if (parsedReq.error) {
+    return res.json({error: "No token"})
+  }
+
   // Maps parsed data to request for later use
   req.token = parsedReq.token;
   req.parsedCookie = parsedReq.cookies;
 
   // If we have no session res error else continue
-  if(!hasSession) {
+  if (!hasSession) {
     res.json({ error: "No session" });
-  }else {
+  } else {
     next();
   }
 }
