@@ -15,7 +15,7 @@ router.use(checkSession);
 
 // Me Route
 router.get("/", async (req, res) => {
-  const data = await getUserData(req.token);
+  const data = await getUserData(null, {token: req.token});
 
   res.json(data);
 });

@@ -73,13 +73,17 @@
     - [x] Get status
     - [x] Return details
 - [ ] **User API**
-	* [ ] / [GET] - Gets your user list 
-  * [ ] :ID [GET] - Gets users info based on id
+	* [x] / [GET] - Gets your user list
+		- [x] Get users friendlist
+		- [x] Find all users
+		- [x] Get Data
+		- [x] Reponse
+  * [x] :ID [GET] - Gets users info based on id
 		- [x] Check session
 		- [x] Get token
 		- [x] Check if can get details
 		- [x] Get user details
-		- [ ] If friends return more details
+		- [x] If friends return more details
 		- [x] Parse user details
 		- [x] Retrun details
 		- [x] Respond

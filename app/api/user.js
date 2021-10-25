@@ -9,6 +9,7 @@ const getUserData = require("../database/getUserData.js");
 const addUser = require("../database/addUser.js");
 const answerUser = require("../database/answerUser.js");
 const removeUser = require("../database/removeUser.js");
+const getUserList = require("../database/getUserList.js");
 
 // Create Express Router
 const router = express.Router();
@@ -16,12 +17,16 @@ const router = express.Router();
 // Check if user has a session
 router.use(checkSession);
 
+// Get user list
+router.get("/", async (req, res) => {
+  const result = await getUserList(req.token);
+  res.json(result);
+});
+
 // Get user info Route
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
-
-  const data = await getUserData(null, id, {inherit: true});
-
+  const data = await getUserData({ token: req.token }, { id: id }, { inherit: true });
   res.json(data);
 });
 
@@ -49,11 +54,11 @@ router.post("/answer/:id", async (req, res) => {
 
   const answer = req.body.answer;
 
-  if(!answer) {
+  if (!answer) {
     return res.sendStatus(400);
   }
 
-  if(!Number.isInteger(answer)) {
+  if (!Number.isInteger(answer)) {
     return res.sendStatus(400);
   }
 
@@ -66,11 +71,11 @@ router.post("/answer/:id", async (req, res) => {
 router.post("/find", async (req, res) => {
   const data = req.body;
 
-  if(!data.username) {
+  if (!data.username) {
     return res.sendStatus(400);
   }
 
-  if(typeof data.username != "string") {
+  if (typeof data.username != "string") {
     return res.sendStatus(400);
   }
 

@@ -11,16 +11,19 @@ const { getId } = require("../../session.js");
 const getStatus = require("../functions/getStatus.js");
 
 // Findes and parses user based on given token or id and authority
-module.exports = async function getUserData(token, id, permissions) {
+module.exports = async function getUserData(request, response, permissions) {
 
   // Items to delte from found user
   const deleteArray = ["passcode", "_id", "username", "connect"];
 
   // Values to return if private profile
-  const notPrivate = ["displayName", "avatar", "id", "profile"];
+  let notPrivate = ["displayName", "avatar", "id", "profile"];
 
   // Values to delete if public profile
-  const notPublic = ["email", "status"];
+  let notPublic = ["email", "status"];
+
+  // To remove data for friends
+  let friends = ["email"]
 
   // Get database
   const database = mongodb.get();
@@ -29,14 +32,30 @@ module.exports = async function getUserData(token, id, permissions) {
   const users = database.collection("users");
 
   // Inser user to database
-  const foundUser = await users.findOne({ id: token ? getId(token) : parseInt(id) });
+  const foundUser = await users.findOne({ id: response.token ? getId(response.token) : parseInt(response.id) });
+  let requestUser = null;
+
+  // If we have requester token we can find request user
+  if (request) {
+    if (request.token) {
+      requestUser = await users.findOne({ id: getId(request.token) });
+    }
+  }
+
+  // If we have request user we can see if user we are searching for is friend
+  if (requestUser) {
+    if (requestUser.connect.friends.indexOf(response.token ? getId(response.token) : parseInt(response.id)) != -1) {
+      // Set found user profile type to friends
+      foundUser.profile = "friends";
+    }
+  }
 
   // If no found user return error
   if (!foundUser) {
     return { error: "No user found" }
   }
 
-  // Permissions flags check and store
+  // Permissions flags check and store set
   if (permissions) {
     // Inherit flag
     if (permissions.inherit) {
@@ -64,12 +83,21 @@ module.exports = async function getUserData(token, id, permissions) {
             deleteArray.push(value);
           });
           break;
+
+        // Friends profile data
+        case "friends":
+          // Loop over each object in not public
+          friends.forEach(value => {
+            // Append vlue to delete array
+            deleteArray.push(value);
+          });
+          break;
       }
     }
   }
 
   // Get users true status
-  const status = getStatus(token, id);
+  const status = getStatus(response.token, response.id);
 
   // Set main status from database else set custom status
   if (status === "Offline") {
