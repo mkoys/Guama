@@ -106,9 +106,21 @@ module.exports = async function getUserData(request, response, permissions) {
     foundUser.status ? "" : foundUser.status = status;
   }
 
-  // Loop over each delte item and delte it
-  for (let x = 0; x < deleteArray.length; x++) {
-    delete foundUser[deleteArray[x]];
+  // If root flag is set all data is returned else delete items
+  if (permissions) {
+    if (!permissions.root) {
+      deleteList();
+    }
+  } else {
+    deleteList();
+  }
+
+  // Deletes items from found user
+  function deleteList() {
+    // Loop over each delte item and delte it
+    for (let x = 0; x < deleteArray.length; x++) {
+      delete foundUser[deleteArray[x]];
+    }
   }
 
   // Return parsed user

@@ -3,7 +3,7 @@
 - **Expresss** --> API framework
 - **Socket.IO** --> Realtime Websocket communication
 - **Cors** --> Set's cross origin resource headers
-- **Helmet** --> Set's some headers to be mroe secure
+- **Helmet** --> Set's some headers to be more secure
 - **Morgan** --> Small http logger
 - **Nodemon** --> Development code live realoader
 - **MongoDB** --> No SQL Database
@@ -79,28 +79,28 @@
 		- [x] Get Data
 		- [x] Reponse
   * [x] :ID [GET] - Gets users info based on id
-		- [x] Check session
-		- [x] Get token
-		- [x] Check if can get details
-		- [x] Get user details
-		- [x] If friends return more details
-		- [x] Parse user details
-		- [x] Retrun details
-		- [x] Respond
+  	- [x] Check session
+  	- [x] Get token
+  	- [x] Check if can get details
+    - [x] Get user details
+  	- [x] If friends return more details
+    - [x] Parse user details
+  	- [x] Retrun details
+  	- [x] Respond
   * [x] ADD/:ID [GET] - Sends friend request
-		- [x] Check session
-		- [x] Get token
-		- [x] Check if not already friends
-		- [x] Check if not already send
-		- [x] Check if not already pending
+    - [x] Check session
+  	- [x] Get token
+  	- [x] Check if not already friends
+  	- [x] Check if not already send
+  	- [x] Check if not already pending
     - [x] Add user
-		- [x] Respond
-		- [x] Socket
+  	- [x] Respond
+  	- [x] Socket
   * [x] REMOVE/:ID [GET] - Removes user from friends
-		- [x] Check if user is friend
-		- [x] Remove
-		- [x] Respond
-		- [x] Socket
+  	- [x] Check if user is friend
+  	- [x] Remove
+  	- [x] Respond
+  	- [x] Socket
   * [x] ANSWER/:ID [GET] - Accepts or Declines friend request
    	- [x] Get user data
   	- [x] Validate user input
@@ -109,10 +109,10 @@
   	- [x] Respond
   	- [x] Socket
   * [ ] FIND [POST] - Finds users based on data
-		- [ ] Get user data
-		- [ ] Validate user input
-		- [ ] Find users
-		- [ ] Respond
+    - [ ] Get user data
+  	- [ ] Validate user input
+  	- [ ] Find users
+  	- [ ] Respond
 - [ ] **Message API**
 	* [ ] / [GET] - All messages
 	* [ ] :ID [GET] - Messages from user

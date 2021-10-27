@@ -30,6 +30,9 @@ const checkSocket = require("./app/middleware/checkSocket.js");
 // Import session
 const session = require("./session.js");
 
+// Functions
+const sendStatus = require("./app/functions/sendStatus.js");
+
 // Initialize Database connection
 mongodb.init();
 
@@ -75,9 +78,11 @@ io.use(checkSocket);
 // On socket connection
 io.on("connection", (socket) => {
     console.log(`User ${socket.id} has connected with token of ${socket.token}`);
+    sendStatus(session.getId(socket.token)); // Send status on action
     socket.on("disconnect", () => {
         console.log(`User ${socket.id} has disconnected with token of ${socket.token}`);
-        session.removeSocket(socket, socket.token);
+        session.removeSocket(socket, socket.token); // Remove session from session store
+        sendStatus(session.getId(socket.token)); // Send status on action
     });
 });
 
