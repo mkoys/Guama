@@ -122,7 +122,7 @@
   * [x] Append to socket
   * [x] Remove from socket
   * [x] Add User
-  * [ ] Status
+  * [x] Status
   * [x] Remove User
   * [x] Accept/Decline User
   * [ ] Messages
