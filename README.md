@@ -116,7 +116,17 @@
 - [ ] **Message API**
 	* [ ] / [GET] - All messages
 	* [ ] :ID [GET] - Messages from user
-	* [ ] SEND/:ID - Send message to user
+	* [x] SEND/:ID - Send message to user
+		- [x] Get ID from params
+		- [x] Get user data
+		- [x] Validate user data
+		- [x] Send Message
+      * [x] Check if can send message to user
+      * [x] New or Old chat?
+			* [x] Parse message
+			* [x] Append to message colletion
+		- [x] Response / Error
+		- [x] Socket IO message
 - [ ] **Socket**
   * [x] Middleware
   * [x] Append to socket
