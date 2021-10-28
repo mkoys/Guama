@@ -3,6 +3,7 @@ const express = require("express");
 
 // Database calls
 const sendMessage = require("../database/sendMessage.js");
+const getMessage = require("../database/getMessage.js");
 
 // Import middleware
 const checkSession = require("../middleware/checkSession.js");
@@ -26,6 +27,14 @@ router.post("/send/:id", async (req, res) => {
   const result = await sendMessage(id, req.token, data.content);
 
   res.json(result);
+});
+
+router.get("/:id", async (req, res) => {
+  const id = req.params.id;
+
+  const messages = await getMessage(req.token, id);
+
+  res.json(messages)
 });
 
 // Export router

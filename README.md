@@ -115,7 +115,10 @@
   	- [ ] Respond
 - [ ] **Message API**
 	* [ ] / [GET] - All messages
-	* [ ] :ID [GET] - Messages from user
+	* [x] :ID [GET] - Messages from user
+		- [x] Get ID from params
+		- [x] Retreve messages
+		- [x] Respond
 	* [x] SEND/:ID - Send message to user
 		- [x] Get ID from params
 		- [x] Get user data

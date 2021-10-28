@@ -22,16 +22,17 @@ module.exports = async function sendMessage(id, token, content) {
     return { error: "Can't send message to yourself" };
   }
 
-  const recever = await users.findOne({id: id});
+  const recever = await users.findOne({ id: id });
 
-  if(recever.connect.blocked.indexOf(userId) != -1) {
-    return {error: "You can't send messages to this user"};
+  if (recever.connect.blocked.indexOf(userId) != -1) {
+    return { error: "You can't send messages to this user" };
   }
 
   messages.insertOne({
     members: [userId, id],
+    by: userId,
     content: content,
-    timestamp: new Date()
+    timestamp: new Date().getTime()
   });
 
   io.to(id).to(userId).emit("message", {
