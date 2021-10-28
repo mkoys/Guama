@@ -113,8 +113,12 @@
   	- [ ] Validate user input
   	- [ ] Find users
   	- [ ] Respond
-- [ ] **Message API**
-	* [ ] / [GET] - All messages
+- [x] **Message API**
+	* [x] / [GET] - All messages
+		- [x] Get all text unique ID's
+		- [x] Remove own id
+		- [x] Find recent chats with id's
+		- [x] Return found chats
 	* [x] :ID [GET] - Messages from user
 		- [x] Get ID from params
 		- [x] Retreve messages

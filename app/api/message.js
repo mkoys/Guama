@@ -37,5 +37,11 @@ router.get("/:id", async (req, res) => {
   res.json(messages)
 });
 
+router.get("/", async (req, res) => {
+  const messages = await getMessage(req.token);
+
+  res.json(messages)
+});
+
 // Export router
 module.exports = router;
