@@ -10,6 +10,7 @@ const addUser = require("../database/addUser.js");
 const answerUser = require("../database/answerUser.js");
 const removeUser = require("../database/removeUser.js");
 const getUserList = require("../database/getUserList.js");
+const findUser = require("../database/findUser.js");
 
 // Create Express Router
 const router = express.Router();
@@ -79,6 +80,9 @@ router.post("/find", async (req, res) => {
     return res.sendStatus(400);
   }
 
+  const result = await findUser({ username: data.username });
+
+  res.json(result);
 });
 
 // Export router

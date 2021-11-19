@@ -39,7 +39,7 @@ module.exports = async function getMessage(token, id) {
       });
 
       found.push(rawFound);
-    }; 
+    };
   }
 
   return found;

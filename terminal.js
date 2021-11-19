@@ -20,7 +20,7 @@ function motd() {
 const command = function () {
 
 	// Prompt print
-	terminal.yellow("Guama").red(" $ ", );
+	terminal.yellow("Guama").red(" $ ");
 
 	// Actual input of user
 	terminal.inputField(

@@ -3,7 +3,7 @@ const express = require("express");
 
 // Database calls
 const sendMessage = require("../database/sendMessage.js");
-const getMessage = require("../database/getMessage.js");
+const getMessages = require("../database/getMessages.js");
 
 // Import middleware
 const checkSession = require("../middleware/checkSession.js");
@@ -29,16 +29,18 @@ router.post("/send/:id", async (req, res) => {
   res.json(result);
 });
 
+// Get user chat by ID of user
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
 
-  const messages = await getMessage(req.token, id);
+  const messages = await getMessages(req.token, id);
 
   res.json(messages)
 });
 
+// Get All messages with users
 router.get("/", async (req, res) => {
-  const messages = await getMessage(req.token);
+  const messages = await getMessages(req.token);
 
   res.json(messages)
 });

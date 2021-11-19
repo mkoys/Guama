@@ -134,7 +134,7 @@
 			* [x] Append to message colletion
 		- [x] Response / Error
 		- [x] Socket IO message
-- [ ] **Socket**
+- [x] **Socket**
   * [x] Middleware
   * [x] Append to socket
   * [x] Remove from socket
@@ -142,7 +142,7 @@
   * [x] Status
   * [x] Remove User
   * [x] Accept/Decline User
-  * [ ] Messages
+  * [x] Messages
 - [x] **Flags**
 	* [x] Terminal
 	* [x] Debug
