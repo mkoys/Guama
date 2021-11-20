@@ -5,6 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "terminal": "node app.js t",
+    "debug": "nodemon app.js d",
     "dev": "nodemon app.js"
   },
   "keywords": [

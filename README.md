@@ -72,7 +72,7 @@
     - [x] Get user details from id
     - [x] Get status
     - [x] Return details
-- [ ] **User API**
+- [x] **User API**
 	* [x] / [GET] - Gets your user list
 		- [x] Get users friendlist
 		- [x] Find all users
@@ -108,11 +108,11 @@
   	- [x] Accept/Decline
   	- [x] Respond
   	- [x] Socket
-  * [ ] FIND [POST] - Finds users based on data
-    - [ ] Get user data
-  	- [ ] Validate user input
-  	- [ ] Find users
-  	- [ ] Respond
+  * [x] FIND [POST] - Finds users based on data
+    - [x] Get user data
+  	- [x] Validate user input
+  	- [x] Find users
+  	- [x] Respond
 - [x] **Message API**
 	* [x] / [GET] - All messages
 		- [x] Get all text unique ID's
@@ -146,8 +146,8 @@
 - [x] **Flags**
 	* [x] Terminal
 	* [x] Debug
-- [ ] **Terminal**
+- [x] **Terminal**
 	* [x] Boilerplate
 	* [x] Clear
 	* [x] Exit 
-	* [ ] addUser
+	* [x] addUser

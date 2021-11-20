@@ -22,7 +22,7 @@ const mongodb = require("./connect.js");
 const router = require("./router.js");
 
 // Import terminal
-const terminal = require("./terminal.js");
+const terminal = require("./terminal/terminal.js");
 
 // Import socket middleware
 const checkSocket = require("./app/middleware/checkSocket.js");
